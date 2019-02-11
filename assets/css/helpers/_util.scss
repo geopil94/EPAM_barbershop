@@ -1,0 +1,60 @@
+$header-color: rgb(163, 206, 255);
+
+.bordered {
+    border: 1px solid black;
+}
+
+.right-bordered {
+    border-right: 1px solid black;
+}
+
+//кнопки
+.btn {
+    color: black;
+}
+
+.btn--primary {
+    background-color: darken($header-color, 10%);
+}
+.btn--primary:hover {
+    background-color: darken($header-color, 30%); 
+}
+
+// заголовки
+.main__h1 {
+    font-weight: bold;
+    @include font-size-height-align(40px, 60px, center);
+}
+
+.main__h2 {
+    vertical-align: top;
+    @include font-size-height-align(32px, 40px, center);
+}
+
+.main__h3 {
+    vertical-align: top;
+    @include font-size-height-align(28px, 32px, center);
+}
+
+.h3--left {
+    margin-top: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.h1--bottom-margin {
+    margin-bottom: 60px;
+}
+
+// видимость и отображение
+.visible {
+    display: block;
+}
+
+.visible-flex {
+    display: flex !important;
+}
+
+.invisible {
+    display: none;
+}

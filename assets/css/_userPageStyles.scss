@@ -1,0 +1,50 @@
+//стиль для user-page 
+.personal-menu {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @include font-size-height-align(20px, 48px, 'center');
+}
+
+.personal-menu__item {
+    .return-link {
+        color: black;
+    }
+    min-width: 80px;
+    transition: font-size 0.8s ease-in-out, color 0.3s, background-color 0.8s ease-in-out;
+}
+
+.personal-menu__item:hover {
+    .return-link {
+        color: white;
+        text-decoration: none;
+    }
+    color: white;
+    font-size: 28px;
+    background-color: darken($header-color, 20%); 
+}
+
+.appointmentBlock {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    @include font-size-height-align(20px, 24px, 'right');
+    color: white;
+    background-color: darken($header-color, 20%);
+    padding: 8px;
+}
+
+.appointment-box {
+    position: relative;
+}
+
+.small-close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: white;
+    font-size: 24px !important;
+    text-align: end !important;
+    font-weight: bold;
+}

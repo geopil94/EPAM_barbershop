@@ -1,0 +1,33 @@
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin float ($direction) {
+    @if $direction == left {
+        float: $direction !important;
+    }
+    @else if $direction == right {
+        float: $direction !important;
+    } 
+    @else if $direction == none {
+        float: $direction !important;
+    }
+}
+
+@mixin font-size-height-align ($font, $height, $align: left) {
+    font-size: $font;
+    line-height: $height;
+    text-align: $align;
+}

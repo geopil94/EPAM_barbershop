@@ -1,0 +1,30 @@
+{
+  "name": "html-framework-pilipyuk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geopil94/html-framework-pilipyuk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geopil94/html-framework-pilipyuk/issues"
+  },
+  "homepage": "https://github.com/geopil94/html-framework-pilipyuk#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "mysql": "^2.16.0",
+    "save-dev": "^2.0.0"
+  }
+}

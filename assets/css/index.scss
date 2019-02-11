@@ -1,0 +1,365 @@
+@import "./helpers/reset";
+@import "./bootstrap/bootstrap-grid";
+@import "./bootstrap/bootstrap";
+@import "./helpers/mixin";
+@import "./helpers/util";
+@import "./userPageStyles";
+@import "./modalWindows";
+
+// open-sans-regular - cyrillic 
+html {
+    font-family: Calibri, sans-serif; // font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+}
+
+// хэдер
+$header-color: rgb(163, 206, 255);
+.header {   
+    position: fixed;
+    z-index: 1;
+    top: 0%;
+    box-sizing: border-box;
+    width: 100%;
+    @include font-size-height-align(28px, 28px, center);
+    background-color: $header-color;
+}
+
+.navbar {
+    padding: 0px;
+}
+
+.col-9, .col-2, .col-1 {
+    max-height: 120px;
+    padding: 0px;
+}
+
+.main-menu {
+    max-height: 120px;
+    display: flex;
+    flex-wrap: nowrap;
+}   
+
+.main-menu__anchor {
+    display: block;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+}
+
+.main-menu__item {
+    line-height: 80px;
+    max-height: 120px;
+    min-width: 80px;
+    flex-grow: 1;
+    transition: font-size 0.8s ease-in-out, color 0.3s, background-color 0.8s ease-in-out;
+}
+
+.main-menu__item:hover {
+    .main-menu__anchor {
+        color: white;
+        text-decoration: none;
+    }
+    font-size: 44px;
+    color: white;
+    background-color: darken($header-color, 20%);
+}
+
+.main-menu__logo {
+    transition: all 0.8s;
+    flex-grow: 1;
+}
+
+.main-menu__logo:hover {
+    background-color: darken($header-color, 20%); 
+}
+
+.sign-in {
+    max-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.sign-in__item {
+    max-height: 120px;
+    min-width: 80px; 
+    transition: all ease-in-out 0.3s;
+}
+
+.sign-in__item--rotating:hover {
+    transform: rotate(90deg);
+}
+
+.sign-in__log-in {
+    @include font-size-height-align(24px, 28px, 'center');
+}
+
+
+//стилизация кнопок
+.navbar__btn {
+    font-size: 24px;
+}
+
+//иконки соцсетей
+.social-media {
+    max-height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.social-media__item {
+    @keyframes horizontal-shake {
+        15% {
+          transform: translateX(6px);
+        }
+        30% {
+          transform: translateX(-6px);
+        }
+        40% {
+          transform: translateX(4px);
+        }
+        50% {
+          transform: translateX(-4px);
+        }
+        65% {
+          transform: translateX(2px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+    }
+}  
+
+.social-media__item:hover {
+    animation: horizontal-shake 0.8s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+//содержимое страницы
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main__page {
+    justify-content: center;
+    padding: 24vh;
+    background: linear-gradient(139deg, rgb(136, 106, 172) 15%, rgb(64, 218, 250) 93%);
+}
+
+.main__button {
+    @include font-size-height-align(28px, 48px, 'center');
+    margin-top: 10vh;
+    font-size: 40px;
+    display: block !important;
+}
+
+//Услуги
+.main__services {
+    padding: 18vh 40vh;
+    background: linear-gradient(135deg, rgb(205, 133, 63) 0%, rgb(245, 222, 179) 100%);
+}
+
+.main__page__button {
+    margin-top: 16px;
+    font-size: 32px;
+}
+
+.table {
+    @include font-size-height-align(24px, 24px, center);
+    vertical-align: middle;
+    margin-top: 40px;
+}
+
+.table .thead--dark th {
+    color: #fff;
+    background-color: darken(rgb(205, 133, 63), 20%);
+    border-color:darken(rgb(205, 133, 63), 30%);
+}
+
+.main__gallery {
+    padding: 18vh;
+    background: linear-gradient(135deg ,rgb(218, 165, 32) 0%, rgb(236, 231, 126) 100%);
+}
+
+.carousel {
+    margin-top: 40px;
+}
+
+
+//новости
+.main__news {
+    padding: 18vh 40vh;
+    background: linear-gradient(135deg, lighten(rgb(114, 93, 68), 20%) 0%, lighten(rgb(145, 132, 132), 20%) 100%);
+}
+
+
+//работа
+.main__job {
+    height: 130vh;
+    justify-content: space-between;
+    padding: 18vh 40vh;
+    background: linear-gradient(135deg, rgb(105, 130, 109) 0%, rgb(165, 217, 158) 100%); 
+}
+
+.main__job-description {
+    @include font-size-height-align(20px, 28px, left);
+    margin: 12px;
+    margin-bottom: 36px;
+}
+
+.job-list {
+    @include font-size-height-align(20px, 20px, center);
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: flex-start;
+}
+
+.job-list__item {
+    padding: 12px;
+}
+
+.job-list__item:hover {
+    cursor: pointer;
+}
+
+.job-list__item--active {
+    color: white;
+    border-bottom: 2px solid darken(rgb(37, 105, 41), 10%);
+}
+
+.main__job-ad {
+    color: white;
+    @include font-size-height-align(24px, 24px, left);
+}
+
+.main__job-requirements, .main__job-benefits {
+    @include font-size-height-align(16px, 32px, left);
+}
+
+.main__job-requirements__header, .main__job-benefits__header {
+    @include font-size-height-align(20px, 20px, left); 
+    font-weight: bold;
+    color: white;
+}
+
+.job-requirements, .job-benefits {
+    margin-left: 40px;
+}
+
+.main__job-container {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.main__job-container--active {
+    display: flex;
+}
+
+.main__job-responce {
+    display: flex;
+    justify-content: space-around;
+    margin:auto;
+}
+
+.main__job-callback {
+    @include font-size-height-align(20px, 28px, left);
+}
+
+.main__job__btn {
+    align-self: flex-end;
+    padding: 12px;
+    @include font-size-height-align(24px, 24px, center);
+    background: rgb(37, 105, 41);
+    border-color: darken(rgb(37, 105, 41), 10%);
+}
+
+.main__job__btn:hover {
+    background: darken(rgb(37, 105, 41), 10%);
+    border-color: darken(rgb(37, 105, 41), 10%);
+}
+
+.main__job__btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(lighten(rgb(37, 105, 41), 20%), 0.5);
+}
+
+.main__job__btn:not(:disabled):not(.disabled):active, .main__job__btn:not(:disabled):not(.disabled).active,
+.show > .main__job__btn.dropdown-toggle {
+    box-shadow: 0 0 0 0.2rem rgba(lighten(rgb(37, 105, 41), 20%), 0.5);
+    background: darken(rgb(37, 105, 41), 10%);
+    border-color: darken(rgb(37, 105, 41), 10%);
+}
+
+.main__job-link {
+    margin-top: 80px;
+}
+
+//контакты
+.main__contacts {
+    height: 100vh;
+    padding: 18vh 40vh;
+    background: linear-gradient(135deg, rgb(190, 149, 149) 0%, rgb(255, 195, 195) 100%);
+}
+
+.main__contacts-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center !important;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center !important;
+}
+
+.main__contacts__info {
+    align-self: center;
+}
+
+.info__invisible-link {
+    color:rgb(110, 109, 107);
+}
+
+.info__invisible-link:hover {
+    color:rgb(110, 109, 107);
+    text-decoration: none;
+}
+
+.info__invisible-link[href ^= "tel:"]:before {
+    content: "\260E";
+    display: inline-block;
+    margin-right: 0.1em;
+    color:rgb(110, 109, 107);
+}
+
+.info__invisible-link[href ^= "mailto:"]:before {
+    content: "\1F4E7";
+    display: inline-block;
+    margin-right: 0.1em;
+    color:rgb(110, 109, 107);
+}
+
+.contacts__company-name {
+    @include font-size-height-align(18px, 18px, center);    
+}
+
+.contacts__dont-read {
+    @include font-size-height-align(12px, 12px, center); 
+} 
